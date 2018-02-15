@@ -207,7 +207,8 @@
 				9BCDCCA5203569AF00965BAC /* DDUDPServer.m */,
 				9B957B9A203450030010ED7A /* CocoaLogSocket_Prefix.pch */,
 			);
-			path = CocoaLogSocket;
+			name = CocoaLogSocket;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		9B957BA3203453CA0010ED7A /* CocoaLogSocketServer */ = {
@@ -690,7 +691,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = e314521.CocoaLogSocket;
@@ -758,7 +759,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = e314521.CocoaLogSocket;
 				PRODUCT_NAME = "$(PROJECT_NAME)";

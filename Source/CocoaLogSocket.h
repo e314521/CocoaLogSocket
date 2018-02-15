@@ -6,8 +6,8 @@
 //  Copyright © 2017年 e314521. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
+#import <Foundation/Foundation.h>
 //! Project version number for SocketLog.
 FOUNDATION_EXPORT double CocoaLogSocketVersionNumber;
 

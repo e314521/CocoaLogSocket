@@ -40,8 +40,8 @@ void waitinput(){
 }
 int main(int argc, char * argv[]) {
     BOOL isTCP = false,isUDP = false;
-    DDTCPServer *tcp;
-    DDUDPServer *udp;
+    DDTCPServer *tcp = [[DDTCPServer alloc] init];
+    DDUDPServer *udp = [[DDUDPServer alloc] init];
     uint16_t port = 0;
     int ch;
     while((ch=getopt(argc,argv,"tup:"))!=-1)
@@ -59,6 +59,7 @@ int main(int argc, char * argv[]) {
             break;
             default:
             printf("-t TCP\n-u UDP\n-p 端口\n-h 帮助\n");
+            exit(0);
         }
     }
     if(getenv("TERM")){
@@ -66,25 +67,20 @@ int main(int argc, char * argv[]) {
     }
     system1("reset");
     if(!isTCP && !isUDP){
-        isUDP = true;
+        isTCP = true;
     }
     if(port == 0){
         port = 9978;
     }
     
+    dispatch_queue_t dq = dispatch_queue_create("com.appshentan.socketlogserver", DISPATCH_QUEUE_SERIAL);
     
-    
-    @autoreleasepool {
-        dispatch_queue_t dq = dispatch_queue_create("com.appshentan.socketlogserver", DISPATCH_QUEUE_SERIAL);
-        if(isTCP){
-            tcp = [[DDTCPServer alloc] init];
-            [tcp start:port delegateQueue:dq];
-        }
-        if(isUDP){
-            udp = [[DDUDPServer alloc] init];
-            [udp start:port delegateQueue:dq];
-        }
-        waitinput();
+    if(isTCP){
+        [tcp start:port delegateQueue:dq];
     }
+    if(isUDP){
+        [udp start:port delegateQueue:dq];
+    }
+    waitinput();
     return 0;
 }

@@ -1,0 +1,6 @@
+framework module CocoaLogSocket {
+  umbrella header "CocoaLogSocket.h"
+
+  export *
+  module * { export * }
+}

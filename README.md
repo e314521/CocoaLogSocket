@@ -17,7 +17,13 @@ CocoaLogSocket is available through [CocoaPods](http://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CocoaLogSocket'
+use_frameworks!
+target :test do
+    platform :ios, '8.0'
+    inhibit_all_warnings!
+    pod 'CocoaLogSocket'
+end
+
 ```
 
 ## Author
